@@ -43,6 +43,8 @@ rust_library {
     name: "libtinyvec",
     host_supported: true,
     crate_name: "tinyvec",
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.4.0",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
@@ -59,6 +61,3 @@ rust_library {
     ],
     min_sdk_version: "29",
 }
-
-// dependent_library ["feature_list"]
-//   tinyvec_macros-0.1.0
