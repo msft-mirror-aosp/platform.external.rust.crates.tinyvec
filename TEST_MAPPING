@@ -8,6 +8,12 @@
       "name": "quiche_device_test_src_lib"
     },
     {
+      "name": "tinyvec_device_test_tests_arrayvec"
+    },
+    {
+      "name": "tinyvec_device_test_tests_tinyvec"
+    },
+    {
       "name": "unicode-normalization_device_test_src_lib"
     },
     {
