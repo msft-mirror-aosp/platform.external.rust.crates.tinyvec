@@ -7,5 +7,6 @@
   "dependencies": true,
   "features": "alloc,default,tinyvec_macros",
   "device": true,
-  "run": true
+  "run": true,
+  "tests": true
 }
