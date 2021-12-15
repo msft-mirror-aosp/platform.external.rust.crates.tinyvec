@@ -87,9 +87,10 @@ rust_defaults {
     ],
 }
 
-rust_test_host {
-    name: "tinyvec_host_test_tests_arrayvec",
+rust_test {
+    name: "tinyvec_test_tests_arrayvec",
     defaults: ["tinyvec_test_defaults"],
+    host_supported: true,
     srcs: ["tests/arrayvec.rs"],
     test_options: {
         unit_test: true,
@@ -97,22 +98,11 @@ rust_test_host {
 }
 
 rust_test {
-    name: "tinyvec_device_test_tests_arrayvec",
+    name: "tinyvec_test_tests_tinyvec",
     defaults: ["tinyvec_test_defaults"],
-    srcs: ["tests/arrayvec.rs"],
-}
-
-rust_test_host {
-    name: "tinyvec_host_test_tests_tinyvec",
-    defaults: ["tinyvec_test_defaults"],
+    host_supported: true,
     srcs: ["tests/tinyvec.rs"],
     test_options: {
         unit_test: true,
     },
-}
-
-rust_test {
-    name: "tinyvec_device_test_tests_tinyvec",
-    defaults: ["tinyvec_test_defaults"],
-    srcs: ["tests/tinyvec.rs"],
 }
