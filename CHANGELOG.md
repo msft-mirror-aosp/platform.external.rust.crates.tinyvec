@@ -1,25 +1,5 @@
 # Changelog
 
-## 1.4.0
-
-* [saethlin](https://github.com/saethlin) stabilized the usage of const generics and array map with the `rustc_1_55` feature.
-  [pr 149](https://github.com/Lokathor/tinyvec/pull/149)
-
-## 1.3.1
-
-* Improved the performance of the `clone_from` method [pr 144](https://github.com/Lokathor/tinyvec/pull/144)
-
-## 1.3.0
-
-* [jeffa5](https://github.com/jeffa5) added arbitrary implementations for `TinyVec` and `ArrayVec` [pr 146](https://github.com/Lokathor/tinyvec/pull/146).
-* [elomatreb](https://github.com/elomatreb) implemented `DoubleEndedIterator` for `TinyVecIterator` [pr 145](https://github.com/Lokathor/tinyvec/pull/145).
-
-## 1.2.0
-
-* [Cryptjar](https://github.com/Cryptjar) removed the `A:Array` bound on the struct of `ArrayVec<A:Array>`,
-  and added the `from_array_empty` method, which is a `const fn` constructor
-  [pr 141](https://github.com/Lokathor/tinyvec/pull/141).
-
 ## 1.1.1
 
 * [saethlin](https://github.com/saethlin) contributed many PRs (
