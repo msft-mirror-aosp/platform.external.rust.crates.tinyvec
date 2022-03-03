@@ -17,9 +17,6 @@
     },
     {
       "name": "tinyvec_test_tests_arrayvec"
-    },
-    {
-      "name": "tinyvec_test_tests_tinyvec"
     }
   ],
   "presubmit-rust": [
@@ -28,9 +25,6 @@
     },
     {
       "name": "tinyvec_test_tests_arrayvec"
-    },
-    {
-      "name": "tinyvec_test_tests_tinyvec"
     }
   ]
 }
