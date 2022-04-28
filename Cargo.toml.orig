@@ -1,7 +1,7 @@
 [package]
 name = "tinyvec"
 description = "`tinyvec` provides 100% safe vec-like data structures."
-version = "1.4.0"
+version = "1.5.1"
 authors = ["Lokathor <zefria@gmail.com>"]
 edition = "2018"
 license = "Zlib OR Apache-2.0 OR MIT"
@@ -21,6 +21,9 @@ default = []
 
 # Provide things that utilize the `alloc` crate, namely `TinyVec`.
 alloc = ["tinyvec_macros"]
+
+# Provide things that require Rust's `std` module
+std = []
 
 # (not part of Vec!) Extra methods to let you grab the slice of memory after the
 # "active" portion of an `ArrayVec` or `SliceVec`.
@@ -46,15 +49,23 @@ nightly_slice_partition_dedup = []
 # an experimental impl only for now.
 experimental_write_impl = []
 
+# Some benchmarks are optimized away with the stable black_box function
+# which is based on read_volatile. This feature requires inline assembly
+# and thus a nightly compiler, but is only used in benchmarks.
+real_blackbox = ["criterion/real_blackbox"]
+
 [package.metadata.docs.rs]
-features = ["alloc", "grab_spare_slice", "rustc_1_40", "rustc_1_55", "serde"]
+features = ["alloc", "std", "grab_spare_slice", "rustc_1_40", "rustc_1_55", "serde"]
 rustdoc-args = ["--cfg","docs_rs"]
 
 [package.metadata.playground]
-features = ["alloc", "grab_spare_slice", "rustc_1_40", "rustc_1_55", "serde"]
+features = ["alloc", "std", "grab_spare_slice", "rustc_1_40", "rustc_1_55", "serde"]
 
 [profile.test]
 opt-level = 3
+
+[profile.bench]
+debug = 2
 
 [workspace]
 members = ["fuzz"]
@@ -62,12 +73,18 @@ members = ["fuzz"]
 [dev-dependencies]
 criterion = "0.3.0"
 serde_test = "1.0"
+smallvec = "1"
 
 [[test]]
 name = "tinyvec"
-required-features = ["alloc"]
+required-features = ["alloc", "std"]
 
 [[bench]]
 name = "macros"
 harness = false
 required-features = ["alloc"]
+
+[[bench]]
+name = "smallvec"
+harness = false
+required-features = ["alloc", "real_blackbox"]
