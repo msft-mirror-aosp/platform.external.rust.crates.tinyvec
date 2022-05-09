@@ -44,7 +44,7 @@ rust_library {
     host_supported: true,
     crate_name: "tinyvec",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.4.0",
+    cargo_pkg_version: "1.5.1",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
@@ -62,47 +62,29 @@ rust_library {
     min_sdk_version: "29",
 }
 
-rust_defaults {
-    name: "tinyvec_test_defaults",
-    crate_name: "tinyvec",
+rust_test {
+    name: "tinyvec_test_tests_arrayvec",
+    host_supported: true,
+    crate_name: "arrayvec",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.4.0",
+    cargo_pkg_version: "1.5.1",
+    srcs: ["tests/arrayvec.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
+    test_options: {
+        unit_test: true,
+    },
     edition: "2018",
     features: [
         "alloc",
         "default",
         "tinyvec_macros",
     ],
-    flags: [
-        "-C debug-assertions=on",
-        "-C opt-level=3",
-    ],
     rustlibs: [
         "libcriterion",
         "libserde_test",
+        "libsmallvec",
         "libtinyvec",
         "libtinyvec_macros",
     ],
-}
-
-rust_test {
-    name: "tinyvec_test_tests_arrayvec",
-    defaults: ["tinyvec_test_defaults"],
-    host_supported: true,
-    srcs: ["tests/arrayvec.rs"],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-rust_test {
-    name: "tinyvec_test_tests_tinyvec",
-    defaults: ["tinyvec_test_defaults"],
-    host_supported: true,
-    srcs: ["tests/tinyvec.rs"],
-    test_options: {
-        unit_test: true,
-    },
 }
