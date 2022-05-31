@@ -11,6 +11,14 @@
       "path": "external/rust/crates/url"
     }
   ],
+  "postsubmit": [
+    {
+      "name": "doh_unit_test"
+    },
+    {
+      "name": "tinyvec_test_tests_arrayvec"
+    }
+  ],
   "presubmit": [
     {
       "name": "doh_unit_test"
