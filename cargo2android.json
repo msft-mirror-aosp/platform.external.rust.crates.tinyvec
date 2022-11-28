@@ -5,7 +5,7 @@
   ],
   "dependencies": true,
   "device": true,
-  "features": "alloc,default,tinyvec_macros",
+  "features": "alloc,default,std,tinyvec_macros",
   "min-sdk-version": "29",
   "run": true,
   "tests": true
