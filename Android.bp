@@ -44,7 +44,7 @@ rust_library {
     host_supported: true,
     crate_name: "tinyvec",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.5.1",
+    cargo_pkg_version: "1.6.0",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
@@ -67,7 +67,7 @@ rust_defaults {
     name: "tinyvec_test_defaults",
     crate_name: "tinyvec",
     cargo_env_compat: true,
-    cargo_pkg_version: "1.5.1",
+    cargo_pkg_version: "1.6.0",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
