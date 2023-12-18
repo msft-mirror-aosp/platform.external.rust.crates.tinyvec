@@ -10,7 +10,8 @@
         "alloc",
         "default",
         "std",
-        "tinyvec_macros"
+        "tinyvec_macros",
+        "rustc_1_57"
       ],
       "tests": true
     },
