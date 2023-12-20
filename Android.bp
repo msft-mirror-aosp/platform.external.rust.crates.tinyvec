@@ -50,6 +50,9 @@ rust_library {
     features: [
         "alloc",
         "default",
+        "rustc_1_40",
+        "rustc_1_55",
+        "rustc_1_57",
         "std",
         "tinyvec_macros",
     ],
@@ -79,6 +82,9 @@ rust_test {
     features: [
         "alloc",
         "default",
+        "rustc_1_40",
+        "rustc_1_55",
+        "rustc_1_57",
         "std",
         "tinyvec_macros",
     ],
@@ -107,6 +113,9 @@ rust_test {
     features: [
         "alloc",
         "default",
+        "rustc_1_40",
+        "rustc_1_55",
+        "rustc_1_57",
         "std",
         "tinyvec_macros",
     ],
